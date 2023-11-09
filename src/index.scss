@@ -1,6 +1,189 @@
 @import "./Styles/variables";
 @import "./Styles/mixins";
+@import "./Styles/fonts";
 
-.center{
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Exo 2', sans-serif;
+}
+
+.container{
+  @include container;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo::after{
+  content: "";
+  @include logoWhite;
+  display: block; 
+  width: 102px;
+  height: 18px;
+  fill: #000;
+}
+
+.logo.active::after{
+  @include logoBlack;
+}
+
+.line{
+  opacity: 0.8;
+  background: #FFF;
+  width: 100%;
+  height: 1px;
+}
+
+.header{
+  position: sticky;
+  width: 100%;
+  z-index: 5;
+  
+  &.active{
+    position: fixed;
+  }
+  
+  &__nav{
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(1px);  
+  }
+  
+  &__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  &__list{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+  }
+  
+  &__list_jcsb{
+    justify-content: space-between;
+  }
+  
+  &__bottom{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  &__link{
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+  }
+  .lang{
+    color: #DBDBDB;
+    
+    &.active{
+      color: #fff;
+    }
+  }
+  
+  
+  .verical-line{
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+.home-swiper{
+  width: 100%;
+  height: 100vh;
+  
+  
+  & .swiper-slide{
+    height: 100%;
+    display: flex;
+    position: relative;
+    
+    &::after{
+      content: "";
+      background: rgba(0, 0, 0, 0.20);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      
+    }
+  }
+  
+  &__image{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  &__content{
+    flex-grow: 1;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    z-index: 5;
+  }
+  
+  &__text{
+    color: #FFF;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    width: 593px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 60px;
+    @include container;
+    text-align: right;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+  }
+  
+  .swiper-pagination-bullet{
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    opacity: 1;
+    background: transparent;
+  }
+  
+  .swiper-pagination-bullet-active{
+    background: white;
+  }
+}
+
+.btn-pills{
+  border-radius: 45px;
+  background: #28C79E;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 124%; /* 19.84px */
+  width: 163px;
+  height: 48px;
   @include senter;
+  text-decoration: none;
+  
 }
