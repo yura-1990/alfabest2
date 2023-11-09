@@ -1,10 +1,15 @@
-import React from 'react'
-import SwiperComponent from '../Components/SwiperComponent'
+import SwiperComponent from '../Components/Home/SwiperComponent'
+import AboutComponent from '../Components/Home/AboutComponent'
+import StatisticsComponent from '../Components/Home/StatisticsComponent'
+import AimComponent from '../Components/Home/AimComponent'
 
 export default function Home() {
   return (
     <div>
       <SwiperComponent />
+      <AboutComponent />
+      <StatisticsComponent />
+      <AimComponent />
     </div>
   )
 }

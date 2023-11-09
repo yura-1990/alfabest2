@@ -90,12 +90,12 @@ body{
   }
   .lang{
     color: #DBDBDB;
+    cursor: pointer;
     
     &.active{
       color: #fff;
     }
   }
-  
   
   .verical-line{
     margin-left: 8px;
@@ -186,4 +186,133 @@ body{
   @include senter;
   text-decoration: none;
   
+}
+
+.home-about{
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-top: 60px;
+  
+  &__img{
+    width: 445px;
+  }
+  
+  &__title{
+    color: #1B2330;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 30px;
+  }
+  
+  &__text{
+    color: #1B2330;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 23.8px */
+    margin-bottom: 30px;
+    max-width: 689px;
+    width: 100%;
+  }
+}
+
+.home-statistics{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  
+  &__block{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  &__info{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: #1B2330;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    span{
+      color: #1B2330;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+  
+  &__text{
+    color: #8B8B8B;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  &__item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.mu{
+  &::after{
+    content: "";
+    width: 40px;
+    height: 40px;
+    display: flex;
+  }
+  
+  &-location::after{
+    background-image: $location;
+  }
+  &-map::after{
+    background-image: $map;
+  }
+  &-water::after{
+    background-image: $water;
+  }
+  &-person::after{
+    background-image: $person;
+  }
+}
+
+.home-aim{
+  margin-top: 60px;
+  
+  &__left{
+    max-width: 389px;
+    width: 100%;
+  }
+  
+  &__title{
+    color: #1B2330;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    
+    span{
+      color: #28C79E;
+    }
+  }
+  
+  &__text{
+    color: #1B2330;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 23.8px */
+  }
 }

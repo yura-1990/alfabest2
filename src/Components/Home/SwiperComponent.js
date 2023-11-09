@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import homeBg from '../Assets/img/bg-min.webp'
-import whiteLogo from '../Assets/img/white-logo.svg'
+import homeBg from '../../Assets/img/bg-min.webp'
+import whiteLogo from '../../Assets/img/white-logo.svg'
 import { Pagination, Autoplay } from 'swiper/modules';
 
 export default function SwiperComponent() {
