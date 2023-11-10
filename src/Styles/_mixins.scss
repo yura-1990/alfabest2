@@ -20,3 +20,9 @@
 @mixin logoBlack {
   background-image: $logoBlackSvg;
 }
+
+@mixin media($size) {
+  @media(max-width: #{$size}px){
+    @content;
+  }
+}

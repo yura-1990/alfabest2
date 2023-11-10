@@ -1,13 +1,30 @@
+import React, { useState, useEffect } from 'react';
 import logo from '../Assets/img/logo.svg'
 
 
 export default function Header() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+  
   return (
     <>
-      <header className='header active'>
+      <header className={scrollPosition > 100 ? 'header active' : 'header '}>
         <nav className="header__nav">
           <div className="container header__top">
-            <a href="/" className="logo">
+            <a href="/" className={scrollPosition > 100 ? 'logo active' : 'logo '}>
               <img src={logo} alt="" />
             </a>
             
